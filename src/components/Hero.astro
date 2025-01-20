@@ -13,21 +13,21 @@ import myHero from "@/assets/hero.png";
         class="max-w-4xl w-full flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16"
       >
         <div class="size-60 md:size-96 rounded-full overflow-hidden">
-          <Image src={myHero} alt="Hero photo" class="object-cover"/>
+          <Image src={myHero} alt="Hero photo" class="object-cover" />
         </div>
 
         <div class="flex flex-col items-center gap-4">
           <div class="text-center space-y-2">
-            <p class="text-xl mb-1">Hello, I'm</p>
+            <p class="text-xl mb-1">Hola, soy</p>
             <h1 class="text-4xl md:text-5xl font-bold">Sammy Soriano</h1>
-            <p class="text-2xl">Full Stack Developer</p>
+            <p class="text-2xl">Desarrollador Full Stack</p>
           </div>
 
           <div class="flex gap-4 mt-2">
             <Button variant="outline" className="rounded-full">
-              Download CV
+              Descargar CV
             </Button>
-            <Button className="rounded-full">Contact Info</Button>
+            <Button className="rounded-full">Contacto</Button>
           </div>
 
           <div class="flex gap-4 mt-2">
@@ -35,11 +35,15 @@ import myHero from "@/assets/hero.png";
               href="https://www.linkedin.com/in/sammy-soriano-867991314"
               target="_blank"
             >
-              <Linkedin className="size-6 hover:scale-125 transition hover:text-primary" />
+              <Linkedin
+                className="size-6 hover:scale-125 transition hover:text-primary"
+              />
               <span class="sr-only">LinkedIn Profile</span>
             </a>
             <a href="https://github.com/Samuelsf22" target="_blank">
-              <Github className="size-6 hover:scale-125 transition hover:text-primary" />
+              <Github
+                className="size-6 hover:scale-125 transition hover:text-primary"
+              />
               <span class="sr-only">GitHub Profile</span>
             </a>
           </div>

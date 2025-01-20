@@ -1,6 +1,6 @@
 ---
 import "@/styles/globals.css";
-import '@fontsource-variable/jost';
+import "@fontsource-variable/jost";
 
 import Header from "@/components/Header.astro";
 
@@ -45,7 +45,11 @@ const { title } = Astro.props as LayoutProps;
       }
     </script>
   </head>
-  <body class="transition-all">
+  <body class="transition">
+    <!-- <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(ellipse_100%_80%_at_50%_-50%,color,transparent)]"
+    >
+    </div> -->
     <Header />
     <slot />
   </body>
