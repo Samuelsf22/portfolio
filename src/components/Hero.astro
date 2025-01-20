@@ -1,6 +1,6 @@
 ---
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin } from "lucide-react";
+import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Image } from "astro:assets";
 import myHero from "@/assets/hero.png";
@@ -24,10 +24,14 @@ import myHero from "@/assets/hero.png";
 
         <div class="flex gap-4 mt-2">
           <Button variant="outline" className="rounded-full">
+            <Download className="size-4" />
             Descargar CV
           </Button>
           <a href="mailto:scda.sf04@gmail.com">
-            <Button className="rounded-full">Contáctame</Button>
+            <Button className="rounded-full">
+              <Mail className="size-4" />
+              Contáctame
+            </Button>
           </a>
         </div>
 
