@@ -1,9 +1,27 @@
 ---
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Image } from "astro:assets";
+import myHero from "@/assets/hero.png";
 ---
 
-<Card>
-    <CardContent>
-        
-    </CardContent>
+<Card className="bg-transparent shadow-none border-none">
+  <CardHeader>
+    <CardTitle className="text-4xl text-center">Sobre mí</CardTitle>
+  </CardHeader>
+  <CardContent className="flex flex-col sm:flex-row gap-8 items-center">
+    <div class="rounded-xl overflow-hidden hidden sm:block">
+      <Image src={myHero} alt="Hero photo" class="object-cover" />
+    </div>
+    <p class="text-pretty">
+      Soy un desarrollador Full Stack con una fuerte pasión por crear soluciones
+      tecnológicas que sean funcionales y escalables, siempre buscando mejorar
+      la experiencia del usuario. Me encanta trabajar en equipo, ya que
+      considero que la colaboración es clave para lograr resultados innovadores,
+      y me adapto con facilidad a diferentes entornos de trabajo, lo que me
+      permite integrarme rápidamente y aportar valor. Mi objetivo profesional es
+      convertirme en un desarrollador Full Stack Senior, liderando proyectos que
+      marquen la diferencia y enfrentándome a nuevos desafíos que me permitan
+      seguir creciendo tanto personal como profesionalmente.
+    </p>
+  </CardContent>
 </Card>
