@@ -1,8 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import AboutMe from "@/components/AboutMe.astro";
 ---
 
-<Layout>
-  <Hero />
+<Layout
+  title="Sammy Soriano's Portfolio"
+  description="Conoce más sobre mi y mis proyectos"
+>
+  <SectionContainer class="py-52">
+    <Hero />
+  </SectionContainer>
+  <SectionContainer>
+    <AboutMe />
+  </SectionContainer>
 </Layout>
