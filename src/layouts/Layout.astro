@@ -48,11 +48,9 @@ const { title, description } = Astro.props;
     </script>
   </head>
   <body class="transition">
-    <!-- <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(ellipse_100%_80%_at_50%_-50%,color,transparent)]"
-    >
-    </div> -->
-    <Header />
-    <slot />
+    <div class="bg-gradient-to-t from-transparent from-50% to-secondary">
+      <Header />
+      <slot />
+    </div>
   </body>
 </html>
