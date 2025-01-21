@@ -26,12 +26,12 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full justify-center items-center"
+    class="flex px-3 rounded-full justify-center items-center backdrop-blur-md"
   >
     {
       navItems.map((link) => (
         <a aria-label={link.label} href={link.url}>
-          <Button variant="link">{link.title}</Button>
+          <Button variant="link" className="text-sm sm:text-base font-medium">{link.title}</Button>
         </a>
       ))
     }
