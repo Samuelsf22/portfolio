@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import AboutMe from "@/components/AboutMe.astro";
+import Projects from "@/components/Projects.astro";
 ---
 
 <Layout
@@ -12,7 +13,10 @@ import AboutMe from "@/components/AboutMe.astro";
   <SectionContainer class="pt-52">
     <Hero />
   </SectionContainer>
-  <SectionContainer id="sobre-mi">
+  <SectionContainer class="pt-28" id="proyectos">
+    <Projects />
+  </SectionContainer>
+  <SectionContainer class="pt-10" id="sobre-mi">
     <AboutMe />
   </SectionContainer>
 </Layout>

@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import jgb from "@/assets/project-jgb.webp";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Github, Link } from "lucide-react";
+
+const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    icon: "devicon:astro",
+  },
+  REACT: {
+    name: "React",
+    icon: "devicon:react",
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    icon: "devicon:tailwindcss",
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "JGB - Gestión Académica para Instituciones Educativas",
+    description:
+      "Sistema web diseñado para la gestión eficiente de notas, matrículas, docentes y cursos en instituciones educativas, facilitando el control y administración de los procesos académicos de manera organizada y simplificada.",
+    link: "https://jgb-management-astro-frontend.vercel.app/",
+    github: "https://github.com/Samuelsf22/JGB_Management_Astro_Frontend",
+    image: jgb,
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
+  },
+];
+---
+
+<Card className="bg-transparent shadow-none border-none">
+  <CardHeader>
+    <CardTitle className="text-4xl text-center">Proyectos</CardTitle>
+  </CardHeader>
+  <CardContent>
+    {
+      PROJECTS.map(({ title, description, link, github, image, tags }) => (
+        <Card className="bg-transparent shadow-none border-none">
+          <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2">
+              <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-0 md:group-hover:shadow-2xl">
+                <Image
+                  alt="Project Image"
+                  class="object-cover w-full h-56 transition duration-300 sm:h-full md:scale-110 md:group-hover:scale-100"
+                  loading="lazy"
+                  src={image}
+                />
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/2 md:max-w-lg flex flex-col justify-between gap-y-2">
+              <div class="space-y-2">
+                <h3 class="text-2xl font-bold">{title}</h3>
+                <ul class="flex flex-row gap-x-2">
+                  {tags.map((tag) => (
+                    <li>
+                      <span class="flex gap-x-2 rounded-full text-xs py-1 px-2 bg-secondary">
+                        <Icon name={tag.icon} class="size-4" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p class="text-muted-foreground text-pretty">{description}</p>
+              <footer class="flex gap-x-2">
+                {github && (
+                  <a href={github} target="_blank">
+                    <Button variant="outline" className="rounded-full">
+                      <Github />
+                      Código
+                    </Button>
+                  </a>
+                )}
+                {link && (
+                  <a href={link} target="_blank">
+                    <Button variant="outline" className="rounded-full">
+                      <Link />
+                      Ver Proyecto
+                    </Button>
+                  </a>
+                )}
+              </footer>
+            </div>
+          </article>
+        </Card>
+      ))
+    }
+  </CardContent>
+</Card>
