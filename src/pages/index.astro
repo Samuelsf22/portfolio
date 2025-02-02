@@ -13,10 +13,12 @@ import Projects from "@/components/Projects.astro";
   <SectionContainer class="pt-52">
     <Hero />
   </SectionContainer>
-  <SectionContainer class="pt-28" id="proyectos">
-    <Projects />
-  </SectionContainer>
-  <SectionContainer class="pt-10" id="sobre-mi">
-    <AboutMe />
-  </SectionContainer>
+  <div class="pt-28 space-y-0 sm:space-y-10">
+    <SectionContainer id="proyectos">
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <AboutMe />
+    </SectionContainer>
+  </div>
 </Layout>
