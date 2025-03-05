@@ -4,16 +4,15 @@ import { Button } from "./ui/button";
 
 const navItems = [
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
     title: "Proyectos",
     label: "proyectos",
     url: "/#proyectos",
   },
-
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
+  },
   {
     title: "Contacto",
     label: "contacto",
@@ -26,12 +25,28 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 rounded-full justify-center items-center backdrop-blur-md"
+    id="navbar"
+    class="flex px-3 rounded-full justify-center items-center transition-colors duration-300"
   >
+    <script>
+      document.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+          if (window.scrollY > 0) {
+            navbar.classList.add("backdrop-blur-md","bg-background/25");
+          } else {
+            navbar.classList.remove("backdrop-blur-md", "bg-background/25");
+          }
+        }
+      });
+    </script>
+
     {
       navItems.map((link) => (
         <a aria-label={link.label} href={link.url}>
-          <Button variant="link" className="text-sm sm:text-base font-medium">{link.title}</Button>
+          <Button variant="link" className="text-sm sm:text-base font-medium">
+            {link.title}
+          </Button>
         </a>
       ))
     }
