@@ -28,13 +28,13 @@ export default function CodeDropdown({ github }: { github: GithubLinks }) {
         <DropdownMenuSeparator />
         <a href={github.frontend} target="_blank">
           <DropdownMenuItem>
-            <HardDrive />
+            <Monitor />
             Frontend
           </DropdownMenuItem>
         </a>
         <a href={github.backend} target="_blank">
           <DropdownMenuItem>
-            <Monitor />
+            <HardDrive />
             Backend
           </DropdownMenuItem>
         </a>
