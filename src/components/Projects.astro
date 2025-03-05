@@ -6,6 +6,7 @@ import ec from "@/assets/project-ec.webp";
 
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "@/components/ui/badge";
+import CodeDropdown from "@/components/CodeDropdown";
 
 import { Button } from "./ui/button";
 import { Github, Link } from "lucide-react";
@@ -46,17 +47,23 @@ const PROJECTS = [
     title: "E-Commerce App",
     description:
       "Proyecto de e-commerce desarrollado con Angular y Tailwind CSS, con funcionalidades de carrito de compras, filtrado de productos y autenticación de usuarios. Además, se implementó un backend en Spring WebFlux y PostgreSQL para la gestión de productos y usuarios.",
-    link: "https://e-commerce-astro-frontend.vercel.app/",
-    github: "https://github.com/Samuelsf22/e-frontend",
+    link: "https://e-commerce-a19.vercel.app/",
+    github: {
+      frontend: "https://github.com/Samuelsf22/e-frontend",
+      backend: "https://github.com/Samuelsf22/e-backend",
+    },
     image: ec,
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SPRING, TAGS.POSTGRESQL],
   },
   {
     title: "JGB - Gestión Académica para Instituciones Educativas",
     description:
-      "Sistema web diseñado para la gestión eficiente de notas, matrículas, docentes y cursos en instituciones educativas, facilitando el control y administración de los procesos académicos de manera organizada y simplificada.",
+      "Sistema de gestión académica para instituciones educativas, desarrollado con Astro, React y Tailwind CSS en el frontend, y Django REST Framework en el backend. Permite la gestión de estudiantes, docentes, cursos y calificaciones.",
     link: "https://jgb-management-astro-frontend.vercel.app/",
-    github: "https://github.com/Samuelsf22/JGB_Management_Astro_Frontend",
+    github: {
+      frontend: "https://github.com/Samuelsf22/jgb-frontend",
+      backend: "https://github.com/DavidPPizarro/sga_api",
+    },
     image: jgb,
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO],
   },
@@ -99,14 +106,7 @@ const PROJECTS = [
               </div>
               <p class="text-muted-foreground text-pretty">{description}</p>
               <footer class="flex gap-x-2">
-                {github && (
-                  <a href={github} target="_blank">
-                    <Button variant="outline" className="rounded-full">
-                      <Github />
-                      Código
-                    </Button>
-                  </a>
-                )}
+                {github && <CodeDropdown github={github} client:idle/>}
                 {link && (
                   <a href={link} target="_blank">
                     <Button variant="outline" className="rounded-full">
