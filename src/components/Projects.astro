@@ -2,26 +2,55 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import jgb from "@/assets/project-jgb.webp";
+import ec from "@/assets/project-ec.webp";
+
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "@/components/ui/badge";
+
 import { Button } from "./ui/button";
 import { Github, Link } from "lucide-react";
 
 const TAGS = {
   ASTRO: {
     name: "Astro",
-    icon: "devicon:astro",
+    icon: "vscode-icons:file-type-astro",
   },
   REACT: {
     name: "React",
-    icon: "devicon:react",
+    icon: "vscode-icons:file-type-reactjs",
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    icon: "devicon:tailwindcss",
+    icon: "vscode-icons:file-type-tailwind",
+  },
+  ANGULAR: {
+    name: "Angular",
+    icon: "vscode-icons:file-type-angular",
+  },
+  SPRING: {
+    name: "Spring",
+    icon: "devicon:spring",
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    icon: "devicon:postgresql",
+  },
+  DJANGO: {
+    name: "Django",
+    icon: "vscode-icons:file-type-django",
   },
 };
 
 const PROJECTS = [
+  {
+    title: "E-Commerce App",
+    description:
+      "Proyecto de e-commerce desarrollado con Angular y Tailwind CSS, con funcionalidades de carrito de compras, filtrado de productos y autenticación de usuarios. Además, se implementó un backend en Spring WebFlux y PostgreSQL para la gestión de productos y usuarios.",
+    link: "https://e-commerce-astro-frontend.vercel.app/",
+    github: "https://github.com/Samuelsf22/e-frontend",
+    image: ec,
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SPRING, TAGS.POSTGRESQL],
+  },
   {
     title: "JGB - Gestión Académica para Instituciones Educativas",
     description:
@@ -29,7 +58,7 @@ const PROJECTS = [
     link: "https://jgb-management-astro-frontend.vercel.app/",
     github: "https://github.com/Samuelsf22/JGB_Management_Astro_Frontend",
     image: jgb,
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.DJANGO],
   },
 ];
 ---
@@ -38,7 +67,7 @@ const PROJECTS = [
   <CardHeader>
     <CardTitle className="text-4xl text-center">Proyectos</CardTitle>
   </CardHeader>
-  <CardContent>
+  <CardContent className="space-y-8">
     {
       PROJECTS.map(({ title, description, link, github, image, tags }) => (
         <Card className="bg-transparent shadow-none border-none">
@@ -60,10 +89,10 @@ const PROJECTS = [
                 <ul class="flex flex-row gap-x-2">
                   {tags.map((tag) => (
                     <li>
-                      <span class="flex gap-x-2 rounded-full text-xs py-1 px-2 bg-secondary">
+                      <Badge variant="secondary" className="gap-2">
                         <Icon name={tag.icon} class="size-4" />
                         {tag.name}
-                      </span>
+                      </Badge>
                     </li>
                   ))}
                 </ul>
